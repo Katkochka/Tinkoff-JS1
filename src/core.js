@@ -1,34 +1,29 @@
 //Напишите функцию, которая проверяет, является ли число целым используя побитовые операторы
 function isInteger(n) {
-    // return ((n ^ 0) === n);
     return (~~n == n);
 }
 
 //Напишите функцию, которая возвращает массив четных чисел от 2 до 20 включительно
 function even() {
-    let num = 1;
-    let i = 0;
     let arr = [];
 
-    while (num < 21) {
-      if (!(num%2)){
-        arr[i]=num;
-        i++;
-      }
-      num++;
+    for (let i = 1; i < 21; i++){
+        if (!(i%2)){
+            arr.push(i);
+        }
     }
+
     return (arr);
 }
 
 //Напишите функцию, считающую сумму чисел до заданного используя цикл
 function sumTo(n) {
-    let i = 0;
     let sum = 0;
 
-    while(i < (n+1)){
+    for (let i = 0; i < (n+1); i++){
         sum+=i;
-        i++;
     }
+    
     return (sum);
 }
 
@@ -37,8 +32,7 @@ function recSumTo(n) {
     if (n === 0) {
         return 0;
       }
-    res = n + recSumTo(n-1);
-    return (res);
+    return n + recSumTo(n-1);
 }
 
 //Напишите функцию, считающую факториал заданного числа
@@ -46,8 +40,7 @@ function factorial(n) {
     if (n === 0 || (n === 1)) {
         return 1;
       }
-    res = n * factorial(n - 1);
-    return (res);
+    return n * factorial(n - 1);
 }
 
 //Напишите функцию, которая определяет, является ли число двойкой, возведенной в степень
